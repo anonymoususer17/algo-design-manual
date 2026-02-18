@@ -1,12 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
+#include "utilities.h"
 
 /* insertion sort example, pg4 */
 void insertion_sort(int s[], int n)
@@ -58,7 +52,7 @@ void nearest_neighbour(int num_list[], int length)
         int min_index = 1;
         for (int j = 2; j < length; j++)
         {
-            if (p - num_list[j] < p - num_list[min_index])
+            if (p - num_list[j] < p - num_list[min_index] && exists_in_array(num_list[j], sorted_num_list, i) == 0)
             {
                 min_index = j;
             }
